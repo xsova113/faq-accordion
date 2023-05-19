@@ -59,8 +59,8 @@ function App() {
 
   return (
     <div className="w-screen h-screen bg-gradient-to-tl from-indigo-700 to-purple-400 flex justify-center items-center relative">
-      <div className="bg-[url('/images/bg-pattern-mobile.svg')] sm:bg-[url('/images/bg-pattern-desktop.svg')] md:h-[70%] sm:h-[80%] sm:w-[80%] h-[80%] w-[90%] bg-white flex flex-col sm:flex-row sm:mt-0 mt-[90px] rounded-3xl shadow-2xl sm:overflow-hidden">
-        <div className="flex items-center ml-11">
+      <div className="bg-[url('/images/bg-pattern-mobile.svg')] sm:bg-[url('/images/bg-pattern-desktop.svg')] md:h-[70%] sm:h-[80%] sm:max-w-[700px] h-[85%] w-[90%] bg-white flex flex-col sm:flex-row sm:mt-0 mt-[150px] rounded-3xl shadow-2xl sm:overflow-hidden">
+        <div className="flex items-center mx-auto sm:ml-11">
           <img
             src="/images/illustration-woman-online-desktop.svg"
             alt="image"
@@ -69,7 +69,7 @@ function App() {
           <img
             src="/images/illustration-box-desktop.svg"
             alt="box"
-            className="absolute sm:left-[10px] md:left-[30px] lg:left-[60px] sm:pt-[100px] w-[100px] sm:w-[120px] md:w-[150px] left-18 sm:mb-0 mb-[170px]"
+            className="absolute sm:-left-[30px] md:left-[50px] lg:left-[200px] sm:pt-[100px] w-[100px] sm:w-[120px] md:w-[150px] left-18 sm:mb-0 mb-[170px]"
           />
         </div>
 
