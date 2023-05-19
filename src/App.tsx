@@ -59,23 +59,23 @@ function App() {
 
   return (
     <div className="w-screen h-screen bg-gradient-to-tl from-indigo-700 to-purple-400 flex justify-center items-center relative">
-      <div className="bg-[url('/images/bg-pattern-mobile.svg')] sm:bg-[url('/images/bg-pattern-desktop.svg')] md:h-[70%] sm:h-[80%] sm:max-w-[700px] h-[95%] w-[90%] bg-white flex flex-col sm:flex-row sm:mt-0 rounded-3xl shadow-2xl sm:overflow-hidden">
+      <div className="bg-[url('/images/bg-pattern-mobile.svg')] sm:bg-[url('/images/bg-pattern-desktop.svg')] md:h-[70%] sm:h-[80%] sm:max-w-[700px] h-[85%] pt-10 w-[90%] bg-white flex flex-col sm:flex-row sm:mt-0 rounded-3xl shadow-2xl sm:overflow-hidden">
         <div className="flex items-center mx-auto sm:ml-11">
           <img
             src="/images/illustration-woman-online-desktop.svg"
             alt="image"
-            className="sm:min-w-[300px] md:min-w-[380px] w-[250px] relative sm:left-0 left-1 bottom-[110px] sm:bottom-0 sm:-ml-[120px] shadow-gray-700 "
+            className="sm:min-w-[300px] md:min-w-[380px] w-[220px] relative sm:left-0 left-1 bottom-[90px] sm:bottom-0 sm:-ml-[120px] shadow-gray-700 "
           />
           <img
             src="/images/illustration-box-desktop.svg"
             alt="box"
-            className="absolute sm:-left-[30px] md:left-[50px] lg:left-[200px] sm:pt-[100px] w-[100px] sm:w-[120px] md:w-[150px] left-18 sm:mb-0 mb-[170px]"
+            className="absolute sm:-left-[30px] md:left-[50px] lg:left-[200px] sm:pt-[100px] w-[100px] sm:w-[120px] md:w-[150px] left-18 sm:mb-0 mb-[120px]"
           />
         </div>
 
-        <div className="flex flex-col sm:mt-[70px] -mt-[40px] sm:items-start items-center mx-8">
+        <div className="flex flex-col sm:mt-[70px] -mt-[60px] sm:items-start items-center mx-8">
           <h1 className="text-3xl font-bold mb-8">FAQ</h1>
-          <div className="space-y-4 text-[15px] flex flex-col">
+          <div className="space-y-4 sm:text-[15px] text-[13px] flex flex-col">
             {data.map((item, i) => (
               <div
                 key={i}
