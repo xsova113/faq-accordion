@@ -7,6 +7,6 @@ import Footer from './components/Footer.tsx'
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <App />
-    {/* <Footer /> */}
+    <Footer />
   </React.StrictMode>,
 )
