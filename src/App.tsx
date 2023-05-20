@@ -9,7 +9,7 @@ function App() {
       <motion.img
         initial="hidden"
         whileInView="show"
-        variants={fadeIn("left", "spring", 1.5, 1)}
+        variants={fadeIn("left", "spring", 1, 1)}
         src="/images/illustration-box-desktop.svg"
         className="hidden sm:block relative z-50 left-[70px] -bottom-[70px] w-[150px] h-[130px] -ml-[150px]"
       />
