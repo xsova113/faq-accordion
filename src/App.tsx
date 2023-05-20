@@ -14,7 +14,7 @@ function App() {
         className="hidden sm:block relative z-50 left-[70px] -bottom-[70px] w-[150px] h-[130px] -ml-[150px]"
       />
 
-      <div className=" md:h-[70%] sm:h-[80%] sm:max-w-[750px] h-[70%] pt-10 w-[90%] bg-white flex flex-col sm:flex-row rounded-3xl shadow-2xl sm:overflow-hidden sm:mt-0 mt-[200px] sm:mb-0 mb-[200px">
+      <div className=" md:h-[70%] sm:h-[80%] sm:max-w-[750px] h-[70%] pt-10 w-[90%] bg-white flex flex-col sm:flex-row rounded-3xl shadow-2xl sm:overflow-hidden sm:mt-0 mt-[140px] sm:mb-0 mb-[100px]">
         <motion.div
           initial="hidden"
           whileInView="show"
