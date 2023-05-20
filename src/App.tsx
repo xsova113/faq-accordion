@@ -56,24 +56,30 @@ function App() {
       },
     },
   });
+  // bg-[url('/images/bg-pattern-mobile.svg')] sm:bg-[url('/images/bg-pattern-desktop.svg')]
 
   return (
-    <div className="w-screen h-screen bg-gradient-to-tl from-indigo-700 to-purple-400 flex justify-center items-center relative">
-      <div className="bg-[url('/images/bg-pattern-mobile.svg')] sm:bg-[url('/images/bg-pattern-desktop.svg')] md:h-[70%] sm:h-[80%] sm:max-w-[700px] h-[85%] pt-10 w-[90%] bg-white flex flex-col sm:flex-row sm:mt-0 rounded-3xl shadow-2xl sm:overflow-hidden">
-        <div className="flex items-center mx-auto sm:ml-11">
+    <div className="w-full h-screen bg-gradient-to-tl from-indigo-700 to-purple-400 flex justify-center items-center relative">
+      <img
+        src="/images/illustration-box-desktop.svg"
+        alt="box"
+        className="relative z-50 sm:left-[70px] left-[160px] mb-[600px] sm:-mb-[140px] w-[100px] sm:w-[150px] sm:h-[130px] items-center sm:-ml-[150px] -ml-[95px]"
+      />
+      <div className=" md:h-[70%] sm:h-[80%] sm:max-w-[750px] h-[85%] pt-10 w-[90%] bg-white flex flex-col sm:flex-row sm:mt-0 rounded-3xl shadow-2xl sm:overflow-hidden">
+        <div className="flex items-center mx-auto sm:ml-11 relative ">
           <img
-            src="/images/illustration-woman-online-desktop.svg"
-            alt="image"
-            className="sm:min-w-[300px] md:min-w-[380px] w-[220px] relative sm:left-0 left-1 bottom-[90px] sm:bottom-0 sm:-ml-[120px] shadow-gray-700 "
+            src="/images/bg-pattern-desktop.svg"
+            alt="bg-image"
+            className="absolute w-[230px] sm:min-w-[620px] sm:h-[620px] -right-[3px] sm:-right-[5px] -top-[110px] sm:-top-[80px]"
           />
           <img
-            src="/images/illustration-box-desktop.svg"
-            alt="box"
-            className="absolute sm:-left-[30px] md:left-[50px] lg:left-[200px] sm:pt-[100px] w-[100px] sm:w-[120px] md:w-[150px] left-18 sm:mb-0 mb-[120px]"
+            src="/images/illustration-woman-online-desktop.svg"
+            alt="girl-online-image"
+            className="sm:min-w-[300px] md:min-w-[380px] w-[220px] relative sm:left-0 left-1 bottom-[90px] sm:bottom-0 sm:-ml-[130px] shadow-gray-700"
           />
         </div>
 
-        <div className="flex flex-col sm:mt-[70px] -mt-[60px] sm:items-start items-center mx-8">
+        <div className="flex flex-col sm:mt-[50px] -mt-[60px] sm:items-start items-center mx-8">
           <h1 className="text-3xl font-bold mb-8">FAQ</h1>
           <div className="space-y-4 sm:text-[15px] text-[13px] flex flex-col">
             {data.map((item, i) => (
