@@ -1,139 +1,47 @@
-import { useState } from "react";
 import "./App.css";
 import { motion } from "framer-motion";
-
-interface dataType {
-  q: string;
-  a: string;
-}
+import { fadeIn, imageVariants } from "./utils/variants";
+import Faq from "./components/Faq";
 
 function App() {
-  const data: dataType[] = [
-    {
-      q: "How many team members can I invite?",
-      a: "You can invite up to 2 additional users on the Free plan. There is no limit on team members for the Premium plan.",
-    },
-    {
-      q: " What is the maximum file upload size?",
-      a: " No more than 2GB. All files in your account must fit your allotted storage space.",
-    },
-    {
-      q: "How do I reset my password?",
-      a: "Click “Forgot password” from the login page or “Change password” from your profile page. A reset link will be emailed to you.",
-    },
-    {
-      q: "Can I cancel my subscription?",
-      a: "Yes! Send us a message and we'll process your request no questions asked.",
-    },
-    {
-      q: "Do you provide additional support?",
-      a: "Chat and email support is available 24/7. Phone lines are open during normal business hours.",
-    },
-  ];
-
-  const [isClicked, setIsClicked] = useState(-1);
-
-  const fadeIn = (
-    direction: string,
-    type: string,
-    delay: number,
-    duration: number
-  ) => ({
-    hidden: {
-      x: direction === "left" ? 100 : direction === "right" ? -100 : 0,
-      y: direction === "up" ? 100 : direction === "down" ? -100 : 0,
-      opacity: 0,
-    },
-    show: {
-      x: 0,
-      y: 0,
-      opacity: 1,
-      transition: {
-        type,
-        delay,
-        duration,
-        ease: "easeOut",
-      },
-    },
-  });
-  // bg-[url('/images/bg-pattern-mobile.svg')] sm:bg-[url('/images/bg-pattern-desktop.svg')]
-
   return (
     <div className="w-full h-screen bg-gradient-to-tl from-indigo-700 to-purple-400 flex justify-center items-center relative">
-      <img
+      <motion.img
+        initial="hidden"
+        whileInView="show"
+        variants={fadeIn("left", "spring", 1.5, 1)}
         src="/images/illustration-box-desktop.svg"
-        alt="box"
         className="hidden sm:block relative z-50 sm:left-[70px] left-[160px] bottom-[300px] sm:-bottom-[70px] w-[100px] sm:w-[150px] sm:h-[130px] items-center sm:-ml-[150px] -ml-[95px]"
       />
-      <div className=" md:h-[70%] sm:h-[80%] sm:max-w-[750px] h-[85%] pt-10 w-[90%] bg-white flex flex-col sm:flex-row sm:mt-0 rounded-3xl shadow-2xl sm:overflow-hidden">
-        <div className="flex items-center mx-auto sm:ml-11 relative ">
-          <img
-            src="/images/illustration-box-desktop.svg"
-            alt="box"
-            className="sm:hidden block relative z-50 sm:left-[70px] left-[100px] bottom-[70px] sm:-bottom-[70px] w-[100px] sm:w-[150px] sm:h-[130px] items-center sm:-ml-[150px] -ml-[95px]"
-          />
-          <img
-            src="/images/bg-pattern-desktop.svg"
-            alt="bg-image"
-            className="absolute w-[230px] sm:min-w-[620px] sm:h-[620px] -right-[3px] sm:-right-[5px] -top-[110px] sm:-top-[80px]"
-          />
-          <img
-            src="/images/illustration-woman-online-desktop.svg"
-            alt="girl-online-image"
-            className="sm:min-w-[300px] md:min-w-[380px] w-[220px] relative sm:left-0 left-1 bottom-[90px] sm:bottom-0 sm:-ml-[130px] shadow-gray-700"
-          />
-        </div>
 
-        <div className="flex flex-col sm:mt-[50px] -mt-[60px] sm:items-start items-center mx-8">
-          <h1 className="text-3xl font-bold mb-8">FAQ</h1>
-          <div className="space-y-4 sm:text-[15px] text-[13px] flex flex-col">
-            {data.map((item, i) => (
-              <div
-                key={i}
-                className="flex justify-between gap-12 items-baseline"
-              >
-                <div className="flex flex-col w-full">
-                  <h1
-                    onClick={() => setIsClicked(i === isClicked ? -1 : i)}
-                    className={`text-gray-600 active:text-black active:font-bold mb-2 ${
-                      isClicked === i && "text-black font-bold"
-                    }`}
-                  >
-                    {item.q}
-                  </h1>
-
-                  {isClicked === i && (
-                    <motion.div
-                      variants={fadeIn("left", "spring", 0, 1.2)}
-                      initial="hidden"
-                      whileInView="show"
-                    >
-                      <p
-                        key={i}
-                        className="mb-3 font-thin text-[13px] text-gray-500"
-                      >
-                        {item.a}
-                      </p>
-                    </motion.div>
-                  )}
-                  <hr className="my-1" />
-                </div>
-                <button
-                  className=""
-                  onClick={() => setIsClicked(i === isClicked ? -1 : i)}
-                >
-                  <img
-                    src="/images/icon-arrow-down.svg"
-                    alt="arrow-icon"
-                    className={`min-w-[13px] ${
-                      isClicked === i && "rotate-180"
-                    }`}
-                  />
-                </button>
-              </div>
-            ))}
+      <div className=" md:h-[70%] sm:h-[80%] sm:max-w-[750px] h-[85%] pt-10 w-[90%] bg-white flex flex-col sm:flex-row sm:mt-0 rounded-3xl shadow-2xl sm:overflow-hidden my-[190px]">
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          variants={imageVariants("left")}
+          className="flex"
+        >
+          <div className="flex items-center mx-auto sm:ml-11 relative ">
+            <motion.img
+              variants={fadeIn("left", "spring", 1, 1)}
+              src="/images/illustration-box-desktop.svg"
+              alt="box"
+              className="sm:hidden block relative z-50 left-[90px] bottom-[115px] w-[90px] items-center -ml-[95px]"
+            />
+            <img
+              src="/images/bg-pattern-desktop.svg"
+              alt="bg-image"
+              className="absolute sm:min-w-[620px] sm:h-[620px] right-[2px] sm:-right-[5px] -top-[160px] sm:-top-[80px]"
+            />
+            <img
+              src="/images/illustration-woman-online-desktop.svg"
+              alt="girl-online-image"
+              className="sm:min-w-[300px] md:min-w-[380px] w-[220px] relative sm:left-0 left-1 bottom-[138px] sm:bottom-0 sm:-ml-[130px] shadow-gray-700"
+            />
           </div>
-        </div>
+        </motion.div>
+
+        <Faq />
       </div>
     </div>
   );
