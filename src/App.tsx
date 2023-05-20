@@ -63,10 +63,15 @@ function App() {
       <img
         src="/images/illustration-box-desktop.svg"
         alt="box"
-        className="relative z-50 sm:left-[70px] left-[160px] mb-[600px] sm:-mb-[140px] w-[100px] sm:w-[150px] sm:h-[130px] items-center sm:-ml-[150px] -ml-[95px]"
+        className="hidden sm:block relative z-50 sm:left-[70px] left-[160px] bottom-[300px] sm:-bottom-[70px] w-[100px] sm:w-[150px] sm:h-[130px] items-center sm:-ml-[150px] -ml-[95px]"
       />
       <div className=" md:h-[70%] sm:h-[80%] sm:max-w-[750px] h-[85%] pt-10 w-[90%] bg-white flex flex-col sm:flex-row sm:mt-0 rounded-3xl shadow-2xl sm:overflow-hidden">
         <div className="flex items-center mx-auto sm:ml-11 relative ">
+          <img
+            src="/images/illustration-box-desktop.svg"
+            alt="box"
+            className="sm:hidden block relative z-50 sm:left-[70px] left-[100px] bottom-[70px] sm:-bottom-[70px] w-[100px] sm:w-[150px] sm:h-[130px] items-center sm:-ml-[150px] -ml-[95px]"
+          />
           <img
             src="/images/bg-pattern-desktop.svg"
             alt="bg-image"
