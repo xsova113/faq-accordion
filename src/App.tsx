@@ -1,6 +1,6 @@
 import "./App.css";
 import { motion } from "framer-motion";
-import { fadeIn, imageVariants } from "./utils/variants";
+import { fadeIn, imageVariants, zoomIn } from "./utils/variants";
 import Faq from "./components/Faq";
 
 function App() {
@@ -11,15 +11,15 @@ function App() {
         whileInView="show"
         variants={fadeIn("left", "spring", 1.5, 1)}
         src="/images/illustration-box-desktop.svg"
-        className="hidden sm:block relative z-50 sm:left-[70px] left-[160px] bottom-[300px] sm:-bottom-[70px] w-[100px] sm:w-[150px] sm:h-[130px] items-center sm:-ml-[150px] -ml-[95px]"
+        className="hidden sm:block relative z-50 left-[70px] -bottom-[70px] w-[150px] h-[130px] -ml-[150px]"
       />
 
-      <div className=" md:h-[70%] sm:h-[80%] sm:max-w-[750px] h-[85%] pt-10 w-[90%] bg-white flex flex-col sm:flex-row sm:mt-0 rounded-3xl shadow-2xl sm:overflow-hidden my-[190px]">
+      <div className=" md:h-[70%] sm:h-[80%] sm:max-w-[750px] h-[85%] pt-10 w-[90%] bg-white flex flex-col sm:flex-row rounded-3xl shadow-2xl sm:overflow-hidden sm:mt-0 mt-[200px] sm:mb-0 mb-[200px">
         <motion.div
           initial="hidden"
           whileInView="show"
           variants={imageVariants("left")}
-          className="flex"
+          className="flex sm:mt-0"
         >
           <div className="flex items-center mx-auto sm:ml-11 relative ">
             <motion.img
@@ -41,7 +41,9 @@ function App() {
           </div>
         </motion.div>
 
-        <Faq />
+        <motion.div initial='hidden' whileInView='show' variants={zoomIn(0.5, 0.8)}>
+          <Faq />
+        </motion.div>
       </div>
     </div>
   );
