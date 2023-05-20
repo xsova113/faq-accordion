@@ -7,7 +7,7 @@ const Faq: React.FC = () => {
   const [isClicked, setIsClicked] = useState(-1);
 
   return (
-    <div className="flex flex-col sm:mt-[50px] -mt-[90px] sm:items-start items-center mx-8 sm:pb-0 pb-8">
+    <div className="flex flex-col sm:mt-[50px] -mt-[90px] sm:items-start items-center mx-8 pb-16">
       <h1 className="text-3xl font-bold mb-8">FAQ</h1>
       <div className="space-y-4 sm:text-[15px] text-[13px] flex flex-col">
         {data.map((item, i) => (

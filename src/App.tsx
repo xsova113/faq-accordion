@@ -5,7 +5,7 @@ import Faq from "./components/Faq";
 
 function App() {
   return (
-    <div className="w-full sm:h-screen min-h-screen bg-gradient-to-tl from-indigo-700 to-purple-400 flex justify-center items-center relative">
+    <div className="w-full min-h-screen bg-gradient-to-tl from-indigo-700 to-purple-400 flex justify-center items-center relative">
       <motion.img
         initial="hidden"
         whileInView="show"
