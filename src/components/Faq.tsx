@@ -3,17 +3,18 @@ import data from "../libs/data";
 import { fadeIn } from "../utils/variants";
 import { useState } from "react";
 
-const Faq: React.FC = () => {
+const Faq = () => {
   const [isClicked, setIsClicked] = useState([-1]);
 
+  const numArray: number[] = [];
   const onClicked = (i: number) => {
-    const numArray: number[] = [];
     if (numArray.includes(i)) {
       numArray.splice(i, 1);
       setIsClicked(numArray);
-      return;
+    } else {
+      numArray.push(i);
+      setIsClicked(numArray);
     }
-    setIsClicked(numArray);
   };
 
   return (
@@ -28,14 +29,14 @@ const Faq: React.FC = () => {
             >
               <summary
                 style={{ listStyle: "none" }}
-                className={`flex justify-between gap-4 text-gray-600 active:text-black active:font-bold mb-2 focus:text-black focus:font-bold`}
+                className={`flex justify-between gap-4 text-gray-600 active:text-black active:font-bold mb-2 focus:text-black focus:font-bold cursor-pointer`}
               >
                 {item.q}
                 <img
                   src="/images/icon-arrow-down.svg"
                   alt="arrow-icon"
                   onClick={() => onClicked(i)}
-                  className={`w-3 h-3 ${
+                  className={`w-3 h-3 cursor-pointer ${
                     isClicked.includes(i) && "rotate-180 transition"
                   }`}
                 />
